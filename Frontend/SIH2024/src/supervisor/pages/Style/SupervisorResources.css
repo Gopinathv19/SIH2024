@@ -1,0 +1,27 @@
+.supervisor-resources-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.instructional-guide, .qa-section {
+    margin-bottom: 20px;
+}
+
+.qa {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.qa h4 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.qa p {
+    margin: 0;
+    font-size: 14px;
+}

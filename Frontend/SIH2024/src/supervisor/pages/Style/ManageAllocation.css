@@ -1,0 +1,13 @@
+.manage-allocations {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.manage-allocations h2 {
+    color: #333;
+}
+
+.manage-allocations p {
+    margin-top: 10px;
+    font-size: 16px;
+}

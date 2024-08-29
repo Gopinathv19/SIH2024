@@ -1,0 +1,41 @@
+.review-therapy-plan-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.patient-list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-list-table th, .patient-list-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.patient-list-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.patient-list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.patient-list-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.view-summary-button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.view-summary-button:hover {
+    background-color: #0056b3;
+}

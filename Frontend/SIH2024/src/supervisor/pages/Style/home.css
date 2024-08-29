@@ -1,0 +1,84 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 1rem; /* Padding around navbar content */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between title and nav links */
+    align-items: center; /* Center items vertically */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.navbar h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Size of the title */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list style */
+    display: flex; /* Display items in a row */
+    gap: 1.5rem; /* Spacing between nav items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.nav-links a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text */
+    padding: 0.5rem; /* Padding around link text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    background-color: #575757; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.notification-icon {
+    position: relative; /* Position relative to its normal position */
+}
+
+.notification-icon .icon {
+    font-size: 1.2rem; /* Slightly larger icon size */
+}
+
+.notification-icon a {
+    position: relative; /* Ensure the icon is clickable */
+}
+
+.notification-icon a::after {
+    content: ''; /* Empty content for the notification dot */
+    position: absolute; /* Absolute positioning */
+    top: -4px; /* Adjust position */
+    right: -4px; /* Adjust position */
+    background-color: red; /* Red color for notification dot */
+    width: 8px; /* Width of the dot */
+    height: 8px; /* Height of the dot */
+    border-radius: 50%; /* Circular shape */
+}
+
+@media (max-width: 768px) {
+    /* Responsive design for smaller screens */
+    .nav-links {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem; /* Adjust spacing for vertical layout */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navbar title and links */
+        align-items: flex-start; /* Align items to the start */
+    }
+}

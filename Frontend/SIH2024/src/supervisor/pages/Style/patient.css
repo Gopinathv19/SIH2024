@@ -1,0 +1,66 @@
+/* Patient.css */
+
+/* Main container for the Patient component */
+.patient-page {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Center the content */
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styles for Patient component */
+.patient-page h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Table styles for Patient component */
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header styles for Patient component */
+.patient-table th {
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table cell styles for Patient component */
+.patient-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Button styles for Patient component */
+.patient-table button {
+    padding: 6px 12px;
+    background-color: #28a745; /* Green background for action buttons */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* Button hover effect for Patient component */
+.patient-table button:hover {
+    background-color: #218838;
+}
+
+/* Alternating row colors for table in Patient component */
+.patient-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for alternating rows */
+}
