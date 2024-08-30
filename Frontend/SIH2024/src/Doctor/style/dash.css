@@ -1,0 +1,65 @@
+.dash-container {
+  width: 100vw;
+}
+
+.headiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.b1 {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.b1:hover {
+  background-color: #e04444;
+}
+
+.menu-button {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  border: none;
+  background: none;
+  z-index: 1000;
+}
+
+.bodydiv {
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+  background-color: #f1f1f1;
+}
+
+.profile-section {
+  position: relative;
+  margin-top: 50px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+.profile-name {
+  margin-top: 20px;
+}
+
+.profile-designation {
+  margin-top: 10px;
+}
