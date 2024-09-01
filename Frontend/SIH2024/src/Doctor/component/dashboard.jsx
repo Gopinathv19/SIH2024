@@ -9,7 +9,7 @@ import { PiStudentFill } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { MdMessage } from 'react-icons/md';
 import { RiPsychotherapyFill } from "react-icons/ri";
-import profile from "../images/profile.jpg"; // Import the image
+//import profile from "../images/profile.jpg"; // Import the image
 import "../style/dash.css";
 
 const Dash = () => {
