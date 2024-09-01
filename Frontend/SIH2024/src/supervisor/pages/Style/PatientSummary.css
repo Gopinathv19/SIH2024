@@ -1,0 +1,85 @@
+.patient-summary-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.patient-summary-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.therapy-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.therapy-details-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.therapy-details-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.therapy-details-table td {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.therapy-details-table td:first-child {
+    font-weight: bold;
+    color: #666;
+}
+
+.therapy-details-table td:last-child {
+    color: #333;
+}
+
+.therapy-details-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.therapy-details-table a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .patient-summary-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .patient-summary-container h2 {
+        font-size: 20px;
+    }
+
+    .therapy-details-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    ul li a {
+        font-size: 14px;
+    }
+}

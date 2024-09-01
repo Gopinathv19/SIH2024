@@ -1,37 +1,41 @@
-import React, { useState } from 'react';
-import '../Style/Notification.css'; // Import CSS for Notifications
+import React, { useState } from "react";
+const PatientNotification = [
+  {
+    PatientID: "P01",
+    PatientName: "Praveen",
+    PatientDescription: "I need therapy from the doctor",
+    ApprovalStatus: "Accepted , Rejected",
+  },
+];
+const DoctorNotification=[{},{}]
+const Notification = () => {
+  return (
+    <div className="Notification-parent-container">
+      <table className="Notification-table-Patient">
+        <thead>
+          <tr>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Patient Request Description</th>
+            <th>Approval</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
 
-const Notifications = ({ onPendingAllocation, onManageAllocation }) => {
-    // Example notifications data
-    const [notifications, setNotifications] = useState([
-        { id: 1, type: 'patient', message: 'New patient request from John Doe' },
-        { id: 2, type: 'doctor', message: 'Dr. Emily Brown accepted a new patient' },
-        // Add more notifications as needed
-    ]);
-
-    // Function to handle sending notification to the appropriate component
-    const handleSendNotification = (notification) => {
-        if (notification.type === 'patient') {
-            onPendingAllocation(notification.message);
-        } else if (notification.type === 'doctor') {
-            onManageAllocation(notification.message);
-        }
-    };
-
-    return (
-        <div className="notifications">
-            <h2>Notifications</h2>
-            <p>Check recent alerts and updates regarding allocations and patient requests.</p>
-            <ul>
-                {notifications.map((notification) => (
-                    <li key={notification.id}>
-                        {notification.message}{' '}
-                        <button onClick={() => handleSendNotification(notification)}>Save</button>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+      <table className="Notification-table-doctor">
+        <thead>
+          <tr>
+            <th>Doctor ID</th>
+            <th>Doctor Name</th>
+            <th>Doctor Approval Status Description</th>
+            <th>Patient Confirmation Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  );
 };
 
-export default Notifications;
+export default Notification;

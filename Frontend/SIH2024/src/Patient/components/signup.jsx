@@ -8,7 +8,7 @@ function PatientSignup() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +31,6 @@ function PatientSignup() {
         // Redirect to login or another page upon successful signup
         navigate('/login');
     };
-
     return (
         <div className="signup-container">
             <h2>Patient Signup</h2>

@@ -24,7 +24,7 @@ const Patient = () => {
 
     return (
         <div className="patient-page">
-            <h2>Patient Requests</h2>
+            <h2>Patient List</h2>
             <table className="patient-table">
                 <thead>
                     <tr>
@@ -32,7 +32,7 @@ const Patient = () => {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Actions</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -42,14 +42,7 @@ const Patient = () => {
                             <td>{patient.name}</td>
                             <td>{patient.email}</td>
                             <td>{patient.phone}</td>
-                            <td>
-                                <button onClick={() => handleAllocateDoctor(patient.id)}>
-                                    Allocate Doctor
-                                </button>
-                                <button onClick={() => handleMessagePatient(patient.id)}>
-                                    Message Patient
-                                </button>
-                            </td>
+                             
                         </tr>
                     ))}
                 </tbody>

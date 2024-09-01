@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import '../Style/ReviewTherapyPlan.css'; // Import the CSS file
+import '../Style/PatientSummary.css'; // Import the CSS file
 
 const PatientSummary = () => {
     const { id } = useParams(); // Use useParams to get the patient ID
