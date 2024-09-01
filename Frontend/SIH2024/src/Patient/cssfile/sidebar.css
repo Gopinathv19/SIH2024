@@ -1,0 +1,151 @@
+/* Sidebar Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: gray;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    position:sticky;
+    top:30px;
+    left: 0;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width:none;
+    justify-content: space-evenly;
+    z-index: 10;
+}
+
+/* Profile Section in Sidebar */
+.sidebar .profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* border: 2px solid blue; */
+}
+
+.sidebar .profile-picture img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar .profile-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    /* border: red 2px dashed; */
+}
+
+.sidebar .edit-profile-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Navigation Menu in Sidebar */
+.navigation-menu ul {
+    list-style-type: none;
+    padding: 0;
+    /* border: yellow 2px dashed; */
+}
+
+.navigation-menu ul li {
+    margin-bottom:25px;
+    margin-left: 5px;
+}
+
+.navigation-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Collapsible Section in Sidebar */
+.sidebar .collapsible-section {
+    margin-bottom: 20px;
+    /* border: black 2px dashed; */
+}
+
+.collapsible-btn {
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 1em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+.collapsible-content {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.collapsible-content li {
+    padding: 5px 5px;
+}
+
+.collapsible-content li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.collapsible-content .collapsible-btn label:hover {
+    text-decoration: underline;
+}
+
+/* Progress Section in Sidebar */
+.progress-snapshot {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-fill {
+    background-color: #007bff;
+    height: 100%;
+}
+
+/* Alerts Section in Sidebar */
+.alerts-section {
+    margin-bottom: 1px;
+}
+
+/* Logout Button */
+.logout-section {
+    bottom: 0;
+}
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    text-align: center;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    bottom: 0px;
+}
