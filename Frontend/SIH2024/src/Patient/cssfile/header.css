@@ -1,0 +1,27 @@
+/* Header Styles */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    height: 50px;
+    position: relative;
+   
+}
+
+.sidebar-toggle-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
