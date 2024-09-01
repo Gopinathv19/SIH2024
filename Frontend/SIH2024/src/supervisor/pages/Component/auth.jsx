@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const AuthPage = () => {
-  const navigate=useNavigate();
+const SuprevisorAuthPage = () => {
+    const navigate=useNavigate();
   const [isLoginMode, setIsLoginMode] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
@@ -64,15 +64,14 @@ const AuthPage = () => {
             };
             
             if (isLoginMode) {
-                result = await axios.post('http://localhost:3000/doctor/login', payload);
+                result = await axios.post('http://localhost:3000/suprevisor/login', payload);
             } else {
-                result = await axios.post('http://localhost:3000/doctor/register', payload);
+                result = await axios.post('http://localhost:3000/suprevisor/register', payload);
             }
 
             if (result.status === 200 || result.status === 201) {
                 alert(isLoginMode ? 'Login successful' : 'Registered successfully');
-                navigate("/doctordah");
-                
+                navigate("/suprevisordash");
             } else {
                 alert(result.data); 
             }
@@ -213,4 +212,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default SuprevisorAuthPage;
