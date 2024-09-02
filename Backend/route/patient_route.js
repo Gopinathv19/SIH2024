@@ -1,20 +1,20 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const authschema = require("../models/authentication");
+const patient = require("../models/patient");
 const route = express.Router();
 
-// Register route
+
 route.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
     try {
-        const user = await authschema.findOne({ email }); 
+        const user = await patient.findOne({ email }); 
         if (user) {
             return res.status(400).send("User already exists");
         }
 
     
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newuser = new authschema({ name, email, password: hashedPassword });
+        const newuser = new patient({ name, email, password: hashedPassword });
         await newuser.save();
         res.status(201).send("Registered successfully");
     } catch (err) {
@@ -26,7 +26,7 @@ route.post("/register", async (req, res) => {
 route.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await authschema.findOne({ email }); 
+        const user = await patient.findOne({ email }); 
         if (!user) {
             return res.status(404).send("User not found");
         }

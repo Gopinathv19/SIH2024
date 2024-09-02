@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../Style/MonitorPatientProgress.css'; // Import the CSS file
+import '../Style/MonitorPatientProgress.css';
+
 
 const ProgressSummary = () => {
     const [sessions, setSessions] = useState(Array(10).fill({ status: 'Not Started', details: '' }));
