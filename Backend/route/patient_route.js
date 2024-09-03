@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const patient = require("../models/patient");
 const route = express.Router();
-
+const appoinment=require("../models/appoinment");
 
 route.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
@@ -42,5 +42,35 @@ route.post("/login", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
+route.post("/postappoinment",async(req,res)=>{
+    const { firstName, lastName, date, time, reason,phone, email } = req.body;
 
+    try{
+      const add=new appoinment({
+        firstName,
+        lastName,
+        date,
+        time,
+        reason,
+        phone,
+        email
+      })
+      await add.save();
+      res.send("appointment submitted");
+    }catch(err){
+        res.status(500).send("sever error");
+    }
+});
+route.get("/getappoinment",async(req,res)=>{
+    
+    try{
+       const check=await appoinment.find();
+        if(!check){
+            res.status(201).send("NO DATA FOUND");
+        }
+        res.status(200).send(check);
+    }catch(err){
+        res.status(500).send("sever error");
+    }
+});
 module.exports = route;

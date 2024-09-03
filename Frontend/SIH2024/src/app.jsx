@@ -22,6 +22,8 @@ import ProgressSummary from "./supervisor/pages/Component/ProgressSummary";
 import LandingPage from "./Patient/components/landing";
 import Dashboard from "./supervisor/pages/Component/dashboard";
 import Dboard from "./Doctor/component/doctordash";
+import AppointmentForm from "./Patient/components/appointment";
+import Pending from "./supervisor/pages/Component/pendingrequests";
 // Import the Notification component if it exists
 // import Notification from "./path/to/Notification";
 
@@ -51,6 +53,8 @@ function App() {
         <Route path="/supervisordash" element={<Dashboard/>} />
         <Route path="/doctordash" element={<Dboard/>}/>
         <Route path="/pending-requests" element={<PendingAllocationRequests />} />
+        <Route path="/appoinment" element={<AppointmentForm/>}/>
+        <Route path="/pendingrequest" element={<Pending/>}/>
       </Routes>
     </Router>
   );
