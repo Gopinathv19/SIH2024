@@ -21,12 +21,19 @@ import SuprevisorAuthPage from "./supervisor/pages/Component/auth";
 import RoleSelection from "./authbutton";
 import Dash from "./Doctor/component/dashboard";
 import LandingPage from "./Patient/components/landing";
-
+import Header from "./Patient/components/header";
+import Sidebar from "./Patient/components/sidebar";
 function App() {
   return (
     <Router>
-      
-      <Routes>
+      {/* 
+   <div className='headerapp'>
+             <Header sidebarVisible={sidebarVisible} toggleSidebar={toggleSidebar} />
+             </div>    
+             <div className="main-content">
+                {sidebarVisible && <Sidebar />}
+                </div> */}
+               <Routes>
        
         <Route path="/" element={<RoleSelection/>}/>
         <Route path="/doctorauth" element={<AuthPage/>}/>
