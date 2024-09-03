@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, ListGroup, Col, Button, Offcanvas } from 'react-bootstrap';
+import { ListGroup, Col, Button, Offcanvas } from 'react-bootstrap';
 import { FaBars } from 'react-icons/fa';
 import { GiMedicines } from 'react-icons/gi';  
 import { SlCamrecorder } from 'react-icons/sl';  
@@ -9,10 +9,10 @@ import { PiStudentFill } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { MdMessage } from 'react-icons/md';
 import { RiPsychotherapyFill } from "react-icons/ri";
-//import profile from "../images/profile.jpg"; // Import the image
+
 import "../style/dash.css";
 
-const Dash = () => {
+const Dboard = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ const Dash = () => {
             <div 
               className='profile-picture' 
               style={{
-                backgroundImage: `url(${profile})`, // Use template literals
+              // Use template literals
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100px', // Adjust as needed
@@ -82,4 +82,4 @@ const Dash = () => {
   );
 };
 
-export default Dash;
+export default Dboard;
