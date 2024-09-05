@@ -20,25 +20,22 @@ import SupervisorAuthPage from "./supervisor/pages/Component/auth";
 import RoleSelection from "./authbutton";
 import ProgressSummary from "./supervisor/pages/Component/ProgressSummary";
 import LandingPage from "./Patient/components/landing";
- 
-import Header from "./Patient/components/header";
-import Sidebar from "./Patient/components/sidebar";
+import Dashboard from "./supervisor/pages/Component/dashboard";
+import Dboard from "./Doctor/component/doctordash";
+import AppointmentForm from "./Patient/components/appointment";
+import Pending from "./supervisor/pages/Component/pendingrequests";
+// Import the Notification component if it exists
+// import Notification from "./path/to/Notification";
+
 function App() {
   return (
     <Router>
-      {/* 
-   <div className='headerapp'>
-             <Header sidebarVisible={sidebarVisible} toggleSidebar={toggleSidebar} />
-             </div>    
-             <div className="main-content">
-                {sidebarVisible && <Sidebar />}
-                </div> */}
-               <Routes>
-       
-        <Route path="/" element={<RoleSelection/>}/>
-        <Route path="/doctorauth" element={<AuthPage/>}/>
-        <Route path="/suprevisorauth" element={<SuprevisorAuthPage/>}/>
-        <Route path="/patientauth" element={<PatientAuthPage/>}/>
+      
+      <Routes>
+        <Route path="/" element={<RoleSelection />} />
+        <Route path="/doctorauth" element={<AuthPage />} />
+        <Route path="/suprevisorauth" element={<SupervisorAuthPage />} />
+        <Route path="/patientauth" element={<PatientAuthPage />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/patients" element={<Patient />} />
         <Route path="/doctors" element={<Doctors />} />

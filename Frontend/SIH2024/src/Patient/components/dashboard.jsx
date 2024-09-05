@@ -5,8 +5,8 @@ function DashboardContent() {
     const user = {
         name: 'John Doe',
         therapyStatus: 'Active',
-        // profilePicture: 'https://via.placeholder.com/100',
-        progress: 55,
+        profilePicture: 'https://via.placeholder.com/100',
+        progress: 65,
         upcomingSessions: [
             { date: '2024-08-26', time: '10:00 AM', type: 'Speech Therapy' },
             { date: '2024-08-30', time: '2:00 PM', type: 'Follow-up Session' }
@@ -16,7 +16,7 @@ function DashboardContent() {
         <div className='dashboardcontent'>
             <div className='profile-section-dashboard'>
                 <div className='profile-picture'>
-                    {/* <img src={user.profilePicture} alt="Profile" /> */}
+                    <img src={user.profilePicture} alt="Profile" />
                 </div>
                 <div className='profile-info'>
                     <h3>{user.name}</h3>
@@ -40,12 +40,11 @@ function DashboardContent() {
             </div>
 
             <div className='progress'>
-                <br></br>
+                <br/>
                 <h3>Therapy Progress</h3>
                 <div className='progress-bar'>
                     <div className='progress-fill' style={{ width: `${user.progress}%` }}></div>
                 </div>
-                <br></br>
             </div>
 
             <div className='upcoming-sessions'>

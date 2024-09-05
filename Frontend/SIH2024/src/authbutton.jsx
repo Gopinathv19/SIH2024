@@ -1,22 +1,39 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RoleSelection.css'; // Import the CSS file
 
 const RoleSelection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="role-selection-container">
-      <div className="role-selection-card">
-        <h2 className="role-selection-heading">Select Your Role</h2>
-        <div className="role-selection-button-container">
-          <button onClick={() => navigate('/patientauth')} className="role-selection-button">Patient</button>
-          <button onClick={() => navigate('/suprevisorauth')} className="role-selection-button">Supervisor</button>
-          <button onClick={() => navigate('/doctorauth')} className="role-selection-button">Doctor</button>
-        </div>
+    <div style={styles.container}>
+      <h2>Select Your Role</h2>
+      <div style={styles.buttonContainer}>
+        <button onClick={() => navigate('/patientauth')} style={styles.button}>Patient</button>
+        <button onClick={() => navigate('/suprevisorauth')} style={styles.button}>Supervisor</button>
+        <button onClick={() => navigate('/doctorauth')} style={styles.button}>Doctor</button>
       </div>
     </div>
   );
+};
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    width: '300px',
+  },
+  button: {
+    padding: '10px 20px',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
 };
 
 export default RoleSelection;
