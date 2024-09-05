@@ -3,7 +3,10 @@ const cors=require("cors");
 const app = express();
 app.use(cors());
 const mongoose = require("mongoose");
-const validate=require("./route/routing");
+const patient=require("./route/patient_route");
+const doctor=require("./route/doctor_route");
+const suprevisor=require("./route/suprevisor_route");
+const appoinment=require(".//");
 const port = 3000;
 app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/SIH2024")
@@ -17,4 +20,6 @@ mongoose.connect("mongodb://localhost:27017/SIH2024")
 app.listen(port,()=>{
     console.log(`listening to the port ${port}`);
 })
-app.use("/api/",validate);
+app.use("/patient/",patient);
+app.use("/doctor/",doctor);
+app.use("/suprevisor/",suprevisor);

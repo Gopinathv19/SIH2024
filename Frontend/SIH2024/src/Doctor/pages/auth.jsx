@@ -71,7 +71,7 @@ const AuthPage = () => {
 
             if (result.status === 200 || result.status === 201) {
                 alert(isLoginMode ? 'Login successful' : 'Registered successfully');
-                navigate("/doctordah");
+                navigate("/doctordash");
                 
             } else {
                 alert(result.data); 

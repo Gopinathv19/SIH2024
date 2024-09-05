@@ -1,9 +1,12 @@
 import React from "react";
 import "../Style/Dashboard.css"; // Import CSS for Dashboard
 import { Link } from "react-router-dom";
+import Navbar from "./home";
 
 const Dashboard = () => {
   return (
+  <div>
+      <Navbar/>
     <div className="dashboard">
       <img
         src="path_to_supervisor_image.jpg"
@@ -46,6 +49,7 @@ const Dashboard = () => {
         </li>
       </ul>
     </div>
+  </div>
   );
 };
 
