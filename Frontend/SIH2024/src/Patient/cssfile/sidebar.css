@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: white;
 }
 
 .sidebar {
@@ -11,8 +14,7 @@
     background-color: gray;
     padding: 20px;
     border-right: 1px solid #ddd;
-    position:sticky;
-    top:30px;
+    position:fixed;
     left: 0;
     overflow: scroll;
     display: flex;
@@ -64,12 +66,12 @@
     margin-left: 5px;
 }
 
-.navigation-menu ul li a {
+.navigation-menu ul li Link {
     color: white;
     text-decoration: none;
 }
 
-.navigation-menu ul li a:hover {
+.navigation-menu ul Link a:hover {
     text-decoration: underline;
 }
 
