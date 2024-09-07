@@ -102,7 +102,7 @@ route.get('/particular-patients-details/:id', async (req, res) => {
     }
 });
 
-module.exports = route;
+ 
 
 
 
@@ -153,6 +153,41 @@ route.post('/patientupdate/:id', async (req, res) => {
         res.status(500).send('Internal server error');
     }
 });
+
+route.post('/patientreport/:id',async (req,res)=>{
+    const {id}=req.params;
+        try {
+ 
+    
+            const PatientReport = await patient.findById(
+                id );
+    
+            if (!PatientReport) {
+                return res.status(404).send('Patient Report Not found');
+            }
+    
+            res.status(200).send('Patient Report has been sent ');
+        } catch (error) {
+            console.error('Error sending the patient report', error);
+            res.status(500).send('Internal server error');
+        }
+});
+
+
+route.get('/patientreport/:id',async (res,req)=>{
+    const {id} =req.params;
+    try {
+        // Find the patient by ID and project only the PatientSummary field
+        const patients = await patient.findById(id).select('PatientSummary');
+        if (!patients) {
+            return res.status(404).send("No patient found");
+        }
+        res.status(200).send(patients.PatientSummary); // Return only the PatientSummary field
+    } catch (error) {
+        res.status(500).send("An error occurred while fetching patient details");
+    }
+})
+
 
 
 module.exports = route;
