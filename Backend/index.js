@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const patient=require("./route/patient_route");
 const doctor=require("./route/doctor_route");
 const suprevisor=require("./route/suprevisor_route");
-const appoinment=require(".//");
+const patientdetails =require("./route/patientdetails")
 const port = 3000;
 app.use(express.json());
 mongoose.connect("mongodb://localhost:27017/SIH2024")
@@ -23,3 +23,4 @@ app.listen(port,()=>{
 app.use("/patient/",patient);
 app.use("/doctor/",doctor);
 app.use("/suprevisor/",suprevisor);
+app.use("/patients-details",patientdetails);

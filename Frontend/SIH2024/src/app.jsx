@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./supervisor/pages/Component/home";
-
 import Doctors from "./supervisor/pages/Component/Doctor";
 import AllocationRequests from "./supervisor/pages/Component/AllocationRequests";
 import Profile from "./supervisor/pages/Component/Profile";
@@ -18,12 +17,14 @@ import AuthPage from "./Doctor/pages/auth";
 import PatientAuthPage from "./Patient/components/auth";
 import SupervisorAuthPage from "./supervisor/pages/Component/auth";
 import RoleSelection from "./authbutton";
-import ProgressSummary from "./supervisor/pages/Component/ProgressSummary";
+import ProgressSummary from "./supervisor/pages/Component/PatientUpdate";
 import LandingPage from "./Patient/components/landing";
 import Dashboard from "./supervisor/pages/Component/dashboard";
 import Dboard from "./Doctor/component/doctordash";
 import AppointmentForm from "./Patient/components/appointment";
 import Pending from "./supervisor/pages/Component/pendingrequests";
+import PatientUpdate from "./supervisor/pages/Component/PatientUpdate";
+import PatientDetail from "./supervisor/pages/Component/viewSummary";
 // Import the Notification component if it exists
 // import Notification from "./path/to/Notification";
 
@@ -33,8 +34,10 @@ function App() {
       
       <Routes>
         <Route path="/" element={<RoleSelection />} />
+        <Route path="/navbar" element={<Navbar/>} />
         <Route path="/doctorauth" element={<AuthPage />} />
         <Route path="/suprevisorauth" element={<SupervisorAuthPage />} />
+        <Route path="/patient/:id" component={<PatientSummary/>} />
         <Route path="/patientauth" element={<PatientAuthPage />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/patients" element={<Patient />} />
@@ -55,6 +58,9 @@ function App() {
         <Route path="/pending-requests" element={<PendingAllocationRequests />} />
         <Route path="/appoinment" element={<AppointmentForm/>}/>
         <Route path="/pendingrequest" element={<Pending/>}/>
+        <Route path="/PatientUpdate/:id" element={<PatientUpdate />} />
+       <Route path="/patient-summary" element={<PatientSummary/>}/>
+       <Route path="/summary/:id" element={<PatientDetail/>}/>
       </Routes>
     </Router>
   );

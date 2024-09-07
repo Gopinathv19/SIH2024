@@ -1,17 +1,24 @@
-const mongooes=require("mongoose");
-const appoinment=new mongooes.Schema({
-    firstname:String,
-    lastname:String,
-    date:Date,
-    time:String,
-    reason:String,
-    phn:Number,
-    email:String
+const mongoose = require("mongoose");
 
-})
-const patient=new mongooes.Schema({
-    name:String,
-    email:String,
-    password:String
-})
-module.exports=mongooes.model("patient",patient);
+const sessionSchema = new mongoose.Schema({
+    PatientName: String,
+    SessionDate: Date,
+    StudentTherapyName: String,
+    Suggestion: String,
+    PatientMedication: String,
+    ProgressReport: String,
+    GoalsAchieved: String,
+    NextSteps: String,
+    ActivitiesAssigned: String,
+    ClinicalRatings: Number, // Ensure this is a Number if you only want to store a numeric rating
+});
+
+
+const patientSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String,
+    PatientSummary: [sessionSchema], // Correct reference to the schema
+});
+
+module.exports = mongoose.model("Patient", patientSchema);

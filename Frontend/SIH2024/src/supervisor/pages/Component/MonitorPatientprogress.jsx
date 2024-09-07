@@ -32,7 +32,7 @@ const MonitorPatientProgress = () => {
                             <td>{patient.name}</td>
                             <td>
                                 <button 
-                                    onClick={() => navigate("/progress-summary")} // Navigate with patient ID
+                                    onClick={() => navigate("/patient-summary")} // Navigate with patient ID
                                     className="view-summary-button"
                                 >
                                     Patient-Summary

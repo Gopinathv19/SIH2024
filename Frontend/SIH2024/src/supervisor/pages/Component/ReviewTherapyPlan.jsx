@@ -1,18 +1,25 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook for navigation
-import '../Style/ReviewTherapyPlan.css'; // Import the CSS file
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../Style/ReviewTherapyPlan.css';
+import axios from 'axios';
 
 const ReviewTherapyPlan = () => {
-    // Example data for patients
-    const patients = [
-        {
-            id: 'P001',
-            name: 'Jane Smith',
-        },
-        // Add more patient data as needed
-    ];
+    const [patients, setPatients] = useState([]);
+    const navigate = useNavigate();
 
-    const navigate = useNavigate(); // Initialize useNavigate hook
+    useEffect(() => {
+        const fetchPatients = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/patient/patients-details'); // Fetch patient data from API
+                console.log('Fetched patients:', response.data); // Log the response data for debugging
+                setPatients(response.data); // Update state with the fetched data
+            } catch (error) {
+                console.error('Error fetching patient data:', error);
+            }
+        };
+
+        fetchPatients();
+    }, []);
 
     return (
         <div className="review-therapy-plan-container">
@@ -27,15 +34,15 @@ const ReviewTherapyPlan = () => {
                 </thead>
                 <tbody>
                     {patients.map((patient) => (
-                        <tr key={patient.id}>
-                            <td>{patient.id}</td>
+                        <tr key={patient._id}>
+                            <td>{patient._id}</td>
                             <td>{patient.name}</td>
                             <td>
                                 <button 
-                                    onClick={() => navigate("/patient-summary")} // Navigate with patient ID
+                                    onClick={() => navigate(`/patientupdate/${patient._id}`)} 
                                     className="view-summary-button"
                                 >
-                                    View Summary
+                                    Patient Status Update
                                 </button>
                             </td>
                         </tr>
