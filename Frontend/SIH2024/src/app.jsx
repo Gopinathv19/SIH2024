@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./supervisor/pages/Component/home";
-import Doctors from "./supervisor/pages/Component/Doctor";
+import Doctors from "./supervisor/pages/Component/Report";
 import AllocationRequests from "./supervisor/pages/Component/AllocationRequests";
 import Profile from "./supervisor/pages/Component/Profile";
 import Logout from "./supervisor/pages/Component/Logout";
@@ -25,6 +25,8 @@ import AppointmentForm from "./Patient/components/appointment";
 import Pending from "./supervisor/pages/Component/pendingrequests";
 import PatientUpdate from "./supervisor/pages/Component/PatientUpdate";
 import PatientDetail from "./supervisor/pages/Component/viewSummary";
+import PatientReport from "./supervisor/pages/Component/Report";
+import StudentTherapistReport from "./Doctor/pages/StudentTherapistReport";
 // Import the Notification component if it exists
 // import Notification from "./path/to/Notification";
 
@@ -61,6 +63,9 @@ function App() {
         <Route path="/PatientUpdate/:id" element={<PatientUpdate />} />
        <Route path="/patient-summary" element={<PatientSummary/>}/>
        <Route path="/summary/:id" element={<PatientDetail/>}/>
+       <Route path="/patientreport" element={<PatientReport/>}/>
+       <Route path="/sendingtodoctor/:id" element={<PatientReport/>}/>
+       <Route path="/StudentTherapistReport" element={<StudentTherapistReport/>}/>
       </Routes>
     </Router>
   );

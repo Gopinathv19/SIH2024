@@ -50,7 +50,7 @@ const Dboard = () => {
               <ListGroup.Item onClick={() => navigate('/modifyAwards')}>
                 <MdAutoGraph size={30} />&nbsp;IMPROVEMENT
               </ListGroup.Item>
-              <ListGroup.Item onClick={() => navigate('/modifyEvents')}>
+              <ListGroup.Item onClick={() => navigate('/StudentTherapistReport')}>
                 <PiStudentFill size={30} />&nbsp;STUDENT THERAPIST
               </ListGroup.Item>
               <ListGroup.Item onClick={() => navigate("/waiting")}>

@@ -27,8 +27,33 @@ const PatientDetail = () => {
     if (loading) return <p className="loading">Loading...</p>;
     if (error) return <p className="error">{error}</p>;
 
+const handleSubmit =async (e) =>{
+e.preventDefault();
+console.log("Patient Report Detail",sessions);
+try{
+    const result=await axios.post(`http://localhost:3000/patient/patientreport/${id}`,sessions);
+    if(result.status==200){
+        alert("The Patient Report Sended Successfully");
+    }
+    else{
+        alert("The Patient detail is not sended");
+    }
+}
+catch(error){
+           
+    if (error.response) {
+        alert(`Error: ${error.response.data}`); 
+    } else {
+        alert('An unexpected error occurred');
+    }
+}
+}
+
+
     return (
+    
         <div className="patient-detail-container">
+            <form onSubmit={handleSubmit}> 
             <h2>Patient Summary</h2>
             {sessions.length > 0 ? (
                 sessions.map((session, index) => (
@@ -44,11 +69,14 @@ const PatientDetail = () => {
                         <p><strong>Next Steps:</strong> {session.NextSteps}</p>
                         <p><strong>Activities Assigned:</strong> {session.ActivitiesAssigned}</p>
                         <p><strong>Clinical Ratings:</strong> {session.ClinicalRatings}</p>
+                        <button type='submit'
+                         >Send to Doctor</button>
                     </div>
                 ))
             ) : (
                 <p>No sessions found</p>
             )}
+            </form>
         </div>
     );
 };

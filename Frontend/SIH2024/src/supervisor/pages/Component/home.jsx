@@ -5,7 +5,7 @@ const Navbar = () => {
     const navigate=useNavigate();
     return (
         <nav className="navbar">
-            <h1>Supervisor Name</h1>
+            <h1>Student Therapist</h1>
             <ul className="nav-links">
                 <li><Link to="/dashboard">Dashboard</Link></li>
                  

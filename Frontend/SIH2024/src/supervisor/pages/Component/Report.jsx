@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Style/ReviewTherapyPlan.css';
 import axios from 'axios';
 
-const ReviewTherapyPlan = () => {
+const PatientReport= () => {
     const [patients, setPatients] = useState([]);
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const ReviewTherapyPlan = () => {
 
     return (
         <div className="review-therapy-plan-container">
-            <h2>Patient-Summary</h2>
+            <h2>Patient Report</h2>
             <table className="patient-list-table">
                 <thead>
                     <tr>
@@ -39,10 +39,10 @@ const ReviewTherapyPlan = () => {
                             <td>{patient.name}</td>
                             <td>
                                 <button 
-                                    onClick={() => navigate("/patient-summary")} 
+                                    onClick={() => navigate(`/patientupdate/${patient._id}`)} 
                                     className="view-summary-button"
                                 >
-                                    Patient Summary Status
+                                    Patient Status Update
                                 </button>
                             </td>
                         </tr>
@@ -53,4 +53,4 @@ const ReviewTherapyPlan = () => {
     );
 };
 
-export default ReviewTherapyPlan;
+export default PatientReport;
