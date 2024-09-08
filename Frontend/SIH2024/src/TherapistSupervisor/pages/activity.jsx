@@ -1,5 +1,5 @@
 import React from 'react';
-import CardComponent from '../pages/subact';
+import CardComponent from './subact';
 
 const Mainactivity = () => {
   // Array of activity objects
