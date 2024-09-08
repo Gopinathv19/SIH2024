@@ -164,13 +164,10 @@ route.post('/patientupdate/:id', async (req, res) => {
     }
 });
 
-route.post('/patientreport/:id',async (req,res)=>{
+route.get('/patientreport/:id',async (req,res)=>{
     const {id}=req.params;
         try {
- 
-    
-            const PatientReport = await patient.findById(
-                id );
+              const PatientReport = await patient.findById(id);
     
             if (!PatientReport) {
                 return res.status(404).send('Patient Report Not found');
@@ -184,19 +181,7 @@ route.post('/patientreport/:id',async (req,res)=>{
 });
 
 
-route.get('/patientreport/:id',async (res,req)=>{
-    const {id} =req.params;
-    try {
-        // Find the patient by ID and project only the PatientSummary field
-        const patients = await patient.findById(id).select('PatientSummary');
-        if (!patients) {
-            return res.status(404).send("No patient found");
-        }
-        res.status(200).send(patients.PatientSummary); // Return only the PatientSummary field
-    } catch (error) {
-        res.status(500).send("An error occurred while fetching patient details");
-    }
-})
+ 
 
 
 

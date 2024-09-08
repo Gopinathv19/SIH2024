@@ -31,7 +31,7 @@ const handleSubmit =async (e) =>{
 e.preventDefault();
 console.log("Patient Report Detail",sessions);
 try{
-    const result=await axios.post(`http://localhost:3000/patient/patientreport/${id}`,sessions);
+    const result=await axios.get(`http://localhost:3000/patient/patientreport/${id}`);
     if(result.status==200){
         alert("The Patient Report Sended Successfully");
     }

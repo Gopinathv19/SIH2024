@@ -2,6 +2,8 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const authschema = require("../models/authentication");
 const route = express.Router();
+const patientDetails=require("../models/patient");
+ 
 
 
 route.post("/register", async (req, res) => {
@@ -42,5 +44,19 @@ route.post("/login", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
+
+
+route.get("/report/:id",async(req,res)=>{
+const{id}=req.params;
+try{
+const PatientReport=await patientDetails.findById(id).select('PatientSummary');
+if(!PatientReport){
+    res.status("404").send("Patient-Report Not found");
+}
+res.send(PatientReport.PatientSummary);
+}catch(error){
+res.status("500").send("An error occured while fetching the patient detail")
+}
+})
 
 module.exports = route;

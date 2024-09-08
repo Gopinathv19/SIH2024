@@ -28,6 +28,7 @@ import StudentTherapistReport from "./TherapistSupervisor/pages/StudentTherapist
 import AuthPage from "./TherapistSupervisor/pages/auth";
 import SupervisorAuthPage from "./StudentTherapist/pages/Component/auth";
 import Dboard from "./TherapistSupervisor/component/therapistSupervisorDash";
+import PatientReportList from "./TherapistSupervisor/pages/StudentTherapistNotification";
 
 // Import the Notification component if it exists
 // import Notification from "./path/to/Notification";
@@ -59,7 +60,9 @@ function App() {
         <Route path="/progress-summary" element={<ProgressSummary />} />
         <Route path="/supervisordash" element={<Dashboard />} />
         <Route path="/pending-requests" element={<Pending />} />
-        <Route path="/StudentTherapistReport" element={<StudentTherapistReport />} />
+        <Route path="/pendingrequest" element={<Pending />} />
+        <Route path="/StudentTherapistReport/:id" element={<StudentTherapistReport />} />
+        <Route path="/StudentTherapistReport" element={<PatientReportList/>} />
 
         {/* TherapistSupervisor Routes */}
         <Route path="/doctorauth" element={<AuthPage />} />
