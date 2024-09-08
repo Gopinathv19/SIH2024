@@ -1,85 +1,91 @@
 .patient-summary-container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #f9f9f9;
+    width: 90%;
+    margin: 30px auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .patient-summary-container h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333333;
 }
 
-.therapy-details-table {
+.patient-summary-table {
     width: 100%;
     border-collapse: collapse;
-}
-
-.therapy-details-table tbody tr {
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.therapy-details-table tbody tr:last-child {
-    border-bottom: none;
-}
-
-.therapy-details-table td {
-    padding: 10px;
     font-size: 16px;
-}
-
-.therapy-details-table td:first-child {
-    font-weight: bold;
-    color: #666;
-}
-
-.therapy-details-table td:last-child {
     color: #333;
 }
 
-.therapy-details-table a {
-    color: #007bff;
-    text-decoration: none;
+.patient-summary-table th,
+.patient-summary-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    text-align: left;
 }
 
-.therapy-details-table a:hover {
-    text-decoration: underline;
+.patient-summary-table th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.patient-summary-table td {
+    background-color: #f9f9f9;
 }
 
-ul li {
-    margin: 5px 0;
+.patient-summary-table tr:nth-child(even) td {
+    background-color: #f2f2f2;
 }
 
-ul li a {
+.view-summary-button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.view-summary-button:hover {
+    background-color: #45a049;
+}
+
+.no-patients-found {
+    text-align: center;
+    font-size: 18px;
+    color: #777777;
+    margin-top: 20px;
+}
+
+/* Additional hover effect for table rows */
+.patient-summary-item:hover {
+    background-color: #e0f7fa;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .patient-summary-container {
-        width: 95%;
+        width: 100%;
+        margin: 20px auto;
         padding: 15px;
     }
 
-    .patient-summary-container h2 {
-        font-size: 20px;
-    }
-
-    .therapy-details-table td {
-        padding: 8px;
+    .patient-summary-table th,
+    .patient-summary-table td {
+        padding: 10px;
         font-size: 14px;
     }
 
-    ul li a {
+    .view-summary-button {
+        padding: 6px 12px;
         font-size: 14px;
     }
 }

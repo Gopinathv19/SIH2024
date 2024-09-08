@@ -29,7 +29,7 @@ const PatientSummary = () => {
 
     return (
         <div className="patient-summary-container">
-            <h2>Patient Summary</h2>
+            <h2>Patient Report</h2>
             {patients.length > 0 ? (
                 <table className="patient-summary-table">
                     <thead>

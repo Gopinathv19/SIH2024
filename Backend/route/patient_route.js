@@ -3,7 +3,9 @@ const bcrypt = require("bcrypt");
 const patient = require("../models/patient");
 const route = express.Router();
 const appoinment=require("../models/appoinment");
+route.use(express.json());
 
+//route for the register request in the post method
 route.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
     try {
@@ -22,7 +24,7 @@ route.post("/register", async (req, res) => {
     }
 });
 
-// Login route
+// Route for the login of the Patient in the post method
 route.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -42,6 +44,9 @@ route.post("/login", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
+
+
+// route for the appointment posting 
 route.post("/postappoinment",async(req,res)=>{
     const { firstName, lastName, date, time, reason,phone, email } = req.body;
 
@@ -61,6 +66,9 @@ route.post("/postappoinment",async(req,res)=>{
         res.status(500).send("sever error");
     }
 });
+
+
+// the route to get the appointment post by the patients
 route.get("/getappoinment",async(req,res)=>{
     
     try{
@@ -73,6 +81,8 @@ route.get("/getappoinment",async(req,res)=>{
         res.status(500).send("sever error");
     }
 });
+
+// the route to get the patient detail 
 route.get('/patients-details', async (req, res) => {
     try {
         const patients = await patient.find();
@@ -107,7 +117,7 @@ route.get('/particular-patients-details/:id', async (req, res) => {
 
 
 
-// Define your route
+// The route to update the patient clinical services and the other details
 route.post('/patientupdate/:id', async (req, res) => {
     const { id } = req.params;
     const {

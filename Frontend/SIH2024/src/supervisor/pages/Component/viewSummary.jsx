@@ -54,7 +54,7 @@ catch(error){
     
         <div className="patient-detail-container">
             <form onSubmit={handleSubmit}> 
-            <h2>Patient Summary</h2>
+            <h2>View Summary</h2>
             {sessions.length > 0 ? (
                 sessions.map((session, index) => (
                     <div key={index} className="session-detail">

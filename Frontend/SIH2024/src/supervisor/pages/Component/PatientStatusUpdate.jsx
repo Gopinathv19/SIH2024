@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import '../Style/PatientUpdate.css';
+import '../Style/PatientStatusUpdate.css';
 
 const PatientUpdate = () => {
     const { id } = useParams();
