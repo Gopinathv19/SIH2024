@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./supervisor/pages/Component/home";
+import Navbar from "./supervisor/pages/Component/Home";
 import Doctors from "./supervisor/pages/Component/PatientReport";
 import AllocationRequests from "./supervisor/pages/Component/AllocationRequests";
 import Profile from "./supervisor/pages/Component/StudentTherapistProfile";

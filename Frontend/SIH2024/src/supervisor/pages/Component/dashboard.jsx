@@ -1,7 +1,7 @@
 import React from "react";
 import "../Style/Dashboard.css"; // Import CSS for Dashboard
 import { Link } from "react-router-dom";
-import Navbar from "./home";
+import Navbar from "./Home";
 
 const Dashboard = () => {
   return (
